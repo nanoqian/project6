@@ -1,31 +1,31 @@
-type Constant =
+export type Constant =
     | "pi" | "e"
 
-type UnaryOperation =
+export type UnaryOperation =
     | "-" | "sqrt" | "log" | "ln" | "!"
     | "sin" | "cos" | "tan" | "sec" | "csc" | "cot"
 
-type BinaryOperation =
+export type BinaryOperation =
     | "+" | "-" | "*" | "/" | "^"
 
-type Token =
+export type Token =
     | number | Constant | UnaryOperation | BinaryOperation
     | "(" | ")" | "[" | "]" | "{" | "}"
 
-type Expression =
+export type Expression =
     | { kind: "number"; value: number }
     | { kind: "constant"; value: Constant }
     | { kind: "unary"; operation: UnaryOperation; operand: Expression }
     | { kind: "binary"; operation: BinaryOperation; operand1: Expression; operand2: Expression }
 
-function tokenize(input: string): Token[] | string {
+export function tokenize(input: string): Token[] | string {
     return "not implemented";
 }
 
-function parse(input: Token[]): Expression | string {
+export function parse(input: Token[]): Expression | string {
     return "not implemented";
 }
 
-function interpret(expression: Expression): number | string {
+export function interpret(expression: Expression): number | string {
     return "not implemented";
 }
